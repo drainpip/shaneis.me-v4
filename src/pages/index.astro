@@ -1,5 +1,10 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+const allPosts = Object.values(import.meta.glob("./*.md", { eager: true }));
+allPosts.sort(
+  (a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date)
+);
+const topPosts = allPosts.slice(0, 3);
 const pageTitle = "Shane is me";
 ---
 
@@ -10,6 +15,15 @@ const pageTitle = "Shane is me";
     like writing stories for an audience of one.
   </p>
   <h2>Latest Posts</h2>
+  <ul>
+    {
+      topPosts.map((post: any) => (
+        <li>
+          <a href={post.url}>{post.frontmatter.title}</a>
+        </li>
+      ))
+    }
+  </ul>
   <h3>More?</h3>
   <h4>About Me</h4>
   <p>

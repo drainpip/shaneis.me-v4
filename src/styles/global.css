@@ -177,6 +177,10 @@ header > h1 > a {
   }
 }
 
+.post-date {
+  text-align: right;
+}
+
 @media screen and (prefers-color-scheme: dark) {
   body {
     background-color: #333;
