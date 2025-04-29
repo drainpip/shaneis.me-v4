@@ -15,5 +15,16 @@ const formattedDate = new Date(frontmatter.date).toLocaleDateString("en-US", {
     <slot />
   </article>
   <h4>Posts like this</h4>
+  <p>{frontmatter.tags}</p>
+  <ul>
+    <li>test</li>
+    {
+      frontmatter.tags.map((tag: string) => {
+        <li>
+          <a href={`/blog/${tag}`}>{tag}</a>
+        </li>;
+      })
+    }
+  </ul>
   <p>Previous / Next</p>
 </BaseLayout>

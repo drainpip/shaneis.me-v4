@@ -2,8 +2,12 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 const allPosts = Object.values(import.meta.glob("./*.md", { eager: true }));
 allPosts.sort(
-  (a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date)
+  (a: any, b: any) =>
+    Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date)
 );
+const tags = [
+  ...new Set(allPosts.map((post: any) => post.frontmatter.tags).flat()),
+];
 const topPosts = allPosts.slice(0, 3);
 const pageTitle = "Shane is me";
 ---
@@ -25,6 +29,15 @@ const pageTitle = "Shane is me";
     }
   </ul>
   <h3>More?</h3>
+  <ul>
+    {
+      tags.map((tag: any) => (
+        <li>
+          <a href={`/blog/${tag}`}>{tag}</a>
+        </li>
+      ))
+    }
+  </ul>
   <h4>About Me</h4>
   <p>
     I'm pretty good at my three C's: cars, computers, and canines. I have been
