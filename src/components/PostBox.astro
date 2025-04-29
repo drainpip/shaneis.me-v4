@@ -1,8 +1,8 @@
 ---
-const { data } = Astro.props;
+const { data, postUrl } = Astro.props;
 ---
 
-<a href={data.id} class="post-box">
+<a href={`/${postUrl}`} class="post-box">
   <h3 class="post-box-heading">{data.title}</h3>
   <span class="post-box-date">{data.date}</span>
   <p class="post-box-description">{data.description}</p>

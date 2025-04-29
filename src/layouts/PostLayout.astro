@@ -1,5 +1,20 @@
 ---
+import { getCollection } from "astro:content";
 import BaseLayout from "./BaseLayout.astro";
+
+const allPosts = (await getCollection("blog")).sort(
+  (a: any, b: any) => Date.parse(b.data.date) - Date.parse(a.data.date)
+);
+const currentPostIndex = allPosts.findIndex(
+  (post) => post.id == Astro.props.url.slice(1)
+);
+const previousPost =
+  currentPostIndex + 1 === allPosts.length
+    ? undefined
+    : allPosts[currentPostIndex + 1];
+const nextPost =
+  currentPostIndex === 0 ? undefined : allPosts[currentPostIndex - 1];
+
 const { frontmatter } = Astro.props;
 const formattedDate = new Date(frontmatter.date).toLocaleDateString("en-US", {
   year: "numeric",
@@ -27,11 +42,59 @@ const formattedDate = new Date(frontmatter.date).toLocaleDateString("en-US", {
       ))
     }
   </ul>
-  <p>Previous / Next</p>
+  {
+    (previousPost || nextPost) && (
+      <div class="prev-next">
+        <hr />
+        <ul>
+          {previousPost && (
+            <li>
+              <a href={`/${previousPost.id}/`}>
+                ←&nbsp;{previousPost.data.title}
+              </a>
+            </li>
+          )}
+          {nextPost && (
+            <li class="text-right">
+              <a href={`/${nextPost.id}/`}>{nextPost.data.title}&nbsp;→</a>
+            </li>
+          )}
+        </ul>
+      </div>
+    )
+  }
 </BaseLayout>
 
 <style>
   .post-date {
     text-align: right;
+  }
+  .prev-next ul {
+    display: flex;
+    list-style: none;
+    margin-top: 2em;
+    padding: 0;
+    width: 100%;
+  }
+  .prev-next ul > li {
+    flex: 1 0 0;
+  }
+  .prev-next a {
+    text-decoration: none;
+  }
+  .text-right {
+    text-align: right;
+  }
+  @media (min-width: 40em) {
+    h2,
+    h3 {
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -40vw;
+      margin-right: -40vw;
+      width: 80vw;
+      text-align: center;
+    }
   }
 </style>

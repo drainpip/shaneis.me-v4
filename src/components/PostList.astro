@@ -5,7 +5,7 @@ const { listHeading, posts } = Astro.props;
 
 <div class="post-list">
   <h2>{listHeading}</h2>
-  {posts.map((post: any) => <PostBox data={post.data} />)}
+  {posts.map((post: any) => <PostBox postUrl={post.id} data={post.data} />)}
 </div>
 
 <style>
