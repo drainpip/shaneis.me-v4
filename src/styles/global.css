@@ -167,3 +167,15 @@ header {
     margin-right: auto;
   }
 }
+@media (min-width: 40em) {
+  article h2,
+  article h3 {
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -40vw;
+    margin-right: -40vw;
+    width: 80vw;
+    text-align: center;
+  }
+}
