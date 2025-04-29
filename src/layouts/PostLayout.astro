@@ -27,9 +27,9 @@ const formattedDate = new Date(frontmatter.date).toLocaleDateString("en-US", {
   pageTitle={frontmatter.title}
   pageDescription={frontmatter.description}
 >
-  <h2>{frontmatter.title}</h2>
-  <p class="post-date">{formattedDate}</p>
   <article>
+    <h2>{frontmatter.title}</h2>
+    <p class="post-date">{formattedDate}</p>
     <slot />
   </article>
   <h4>Posts like this</h4>
