@@ -9,10 +9,11 @@ const tags = [
   ...new Set(allPosts.map((post: any) => post.frontmatter.tags).flat()),
 ];
 const topPosts = allPosts.slice(0, 3);
-const pageTitle = "Shane is me";
+const pageTitle = "Home - Shane is me";
+const { pageDescription } = Astro.props;
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout pageTitle={pageTitle} pageDescription={pageDescription}>
   <p>
     I've always had grandiose plans for a personal website that have never come
     to fruition. Instead my creative energy goes into work or fanciful things
