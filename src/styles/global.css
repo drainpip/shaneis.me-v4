@@ -125,20 +125,6 @@ li > ul {
   margin-top: -1em;
   margin-bottom: 1em;
 }
-.line-numbers .line-numbers-rows {
-  padding-top: 1em;
-  padding-bottom: 1em;
-  padding-left: 0.8em;
-}
-:not(pre) > code.language-text {
-  background-color: var(--highlight-background-color);
-  border-radius: 0;
-  color: #fff;
-  padding: 0.1em 0.2em;
-}
-a.anchor {
-  border-bottom: 0;
-}
 
 footer,
 header,
@@ -178,4 +164,20 @@ header {
     width: 80vw;
     text-align: center;
   }
+}
+pre {
+  padding: 1em 1.5em;
+}
+code {
+  counter-reset: step;
+  counter-increment: step 0;
+}
+code .line::before {
+  content: counter(step);
+  counter-increment: step;
+  width: 1rem;
+  margin-right: 1.5rem;
+  display: inline-block;
+  text-align: right;
+  color: rgba(115, 138, 148, 0.5);
 }
