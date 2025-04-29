@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import PostList from "../components/PostList.astro";
 const allPosts = Object.values(import.meta.glob("./*.md", { eager: true }));
 allPosts.sort(
   (a: any, b: any) =>
@@ -19,16 +20,9 @@ const { pageDescription } = Astro.props;
     to fruition. Instead my creative energy goes into work or fanciful things
     like writing stories for an audience of one.
   </p>
-  <h2>Latest Posts</h2>
-  <ul>
-    {
-      topPosts.map((post: any) => (
-        <li>
-          <a href={post.url}>{post.frontmatter.title}</a>
-        </li>
-      ))
-    }
-  </ul>
+
+  <PostList listHeading="Top Posts" posts={topPosts} />
+
   <h3>More?</h3>
   <ul>
     {

@@ -1,0 +1,23 @@
+---
+import PostBox from "../components/PostBox.astro";
+const { listHeading, posts } = Astro.props;
+---
+
+<div class="post-list">
+  <h2>{listHeading}</h2>
+  {posts.map((post: any) => <PostBox frontmatter={post.frontmatter} />)}
+</div>
+
+<style>
+  .post-list {
+    margin-bottom: 2em;
+  }
+  .post-list > h2 {
+    border-bottom: 2px solid #555;
+  }
+  @media screen (prefers-color-scheme: dark) {
+    .post-list > h2 {
+      border-bottom-color: #ededed;
+    }
+  }
+</style>

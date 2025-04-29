@@ -1,0 +1,48 @@
+---
+const { frontmatter, listTitle } = Astro.props;
+---
+
+<a href="test" class="post-box">
+  <h3 class="post-box-heading">{frontmatter.title}</h3>
+  <span class="post-box-date">{frontmatter.date}</span>
+  <p class="post-box-description">{frontmatter.description}</p>
+</a>
+
+<style>
+  .post-box {
+    background-color: var(--highlight-background-color);
+    box-shadow: 0.5rem 0.5rem var(--box-shadow-color);
+    color: var(--highlight-link-color);
+    display: inline-block;
+    padding: 2em 1.5em;
+    position: relative;
+    text-decoration: none;
+    width: 100%;
+  }
+  .post-box:visited {
+    color: var(--highlight-link-color);
+  }
+  .post-box:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  .post-box + .post-box {
+    margin-top: 2em;
+  }
+  .post-box-heading {
+    margin-top: 0;
+    color: var(--highlight-link-color);
+  }
+  .post-box-description {
+    margin-bottom: 0;
+  }
+  .post-box-date {
+    position: absolute;
+    top: 2px;
+    right: 6px;
+  }
+  @media screen and (prefers-color-scheme: dark) {
+    .post-box:hover {
+      background-color: rgba(256, 256, 256, 0.8);
+    }
+  }
+</style>
