@@ -1,0 +1,52 @@
+---
+
+---
+
+<header>
+  <h1><a href="/">Shane is me <span class="blinking-cursor">|</span></a></h1>
+</header>
+
+<style>
+  header > h1 {
+    background-color: var(--highlight-background-color);
+    box-shadow: 0.5rem 0.5rem var(--box-shadow-color);
+    line-height: 1;
+    margin-bottom: 0;
+  }
+  header > h1 > a {
+    color: var(--highlight-link-color);
+    display: block;
+    padding: 0.15em 0.25em;
+    text-decoration: none;
+    &:visited {
+      color: var(--highlight-link-color);
+    }
+    &:hover {
+      color: rgba(255, 255, 255, 0.2);
+    }
+  }
+
+  .blinking-cursor {
+    position: relative;
+    top: -0.1em;
+    -webkit-animation: cursor-blink 1.5s steps(2) infinite;
+    animation: cursor-blink 1.5s steps(2) infinite;
+  }
+  @-webkit-keyframes cursor-blink {
+    0% {
+      opacity: 0;
+    }
+  }
+  @keyframes cursor-blink {
+    0% {
+      opacity: 0;
+    }
+  }
+  @media screen and (prefers-color-scheme: dark) {
+    header > h1 > a {
+      &:hover {
+        color: rgba(51, 51, 51, 0.8);
+      }
+    }
+  }
+</style>
