@@ -1,11 +1,11 @@
 ---
-const { frontmatter, listTitle } = Astro.props;
+const { data } = Astro.props;
 ---
 
-<a href="test" class="post-box">
-  <h3 class="post-box-heading">{frontmatter.title}</h3>
-  <span class="post-box-date">{frontmatter.date}</span>
-  <p class="post-box-description">{frontmatter.description}</p>
+<a href={data.id} class="post-box">
+  <h3 class="post-box-heading">{data.title}</h3>
+  <span class="post-box-date">{data.date}</span>
+  <p class="post-box-description">{data.description}</p>
 </a>
 
 <style>
