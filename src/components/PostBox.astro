@@ -1,16 +1,12 @@
 ---
+import FormattedDate from "./FormattedDate.astro";
+
 const { data, postUrl } = Astro.props;
-const formattedDate = new Date(data.date).toLocaleDateString("en-US", {
-  year: "numeric",
-  month: "long",
-  day: "numeric",
-  timeZone: "UTC",
-});
 ---
 
 <a href={`/${postUrl}`} class="post-box">
   <h3 class="post-box-heading">{data.title}</h3>
-  <span class="post-box-date">{formattedDate}</span>
+  <span class="post-box-date"><FormattedDate date={data.date} /></span>
   <p class="post-box-description">{data.description}</p>
 </a>
 

@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "./BaseLayout.astro";
+import FormattedDate from "../components/FormattedDate.astro";
 
 const allPosts = (await getCollection("blog")).sort(
   (a: any, b: any) => Date.parse(b.data.date) - Date.parse(a.data.date)
@@ -16,11 +17,6 @@ const nextPost =
   currentPostIndex === 0 ? undefined : allPosts[currentPostIndex - 1];
 
 const { frontmatter } = Astro.props;
-const formattedDate = new Date(frontmatter.date).toLocaleDateString("en-US", {
-  year: "numeric",
-  month: "long",
-  day: "numeric",
-});
 ---
 
 <BaseLayout
@@ -29,7 +25,7 @@ const formattedDate = new Date(frontmatter.date).toLocaleDateString("en-US", {
 >
   <article>
     <h2>{frontmatter.title}</h2>
-    <p class="post-date">{formattedDate}</p>
+    <p class="post-date"><FormattedDate date={frontmatter.date} /></p>
     <slot />
   </article>
   <h4>Posts like this</h4>
