@@ -166,7 +166,18 @@ header {
   }
 }
 pre {
+  border: 1px solid var(--highlight-background-color);
   padding: 1em 1.5em;
+}
+@media (min-width: 60em) {
+  pre {
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -30em;
+    margin-right: -30em;
+    width: 60em;
+  }
 }
 code {
   counter-reset: step;
@@ -180,4 +191,23 @@ code .line::before {
   display: inline-block;
   text-align: right;
   color: rgba(115, 138, 148, 0.5);
+}
+p > code,
+li > code {
+  background-color: var(--highlight-background-color);
+  color: var(--highlight-link-color);
+  display: inline-block;
+  font-size: 80%;
+  padding: 0 2px;
+}
+@media (prefers-color-scheme: dark) {
+  .astro-code,
+  .astro-code span {
+    color: var(--shiki-dark) !important;
+    background-color: var(--shiki-dark-bg) !important;
+    /* Optional, if you also want font styles */
+    font-style: var(--shiki-dark-font-style) !important;
+    font-weight: var(--shiki-dark-font-weight) !important;
+    text-decoration: var(--shiki-dark-text-decoration) !important;
+  }
 }

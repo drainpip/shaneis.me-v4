@@ -3,5 +3,14 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-    site: "https://shaneis.me"
+    site: "https://shaneis.me",
+    markdown: {
+        shikiConfig: {
+          themes: {
+            light: 'github-light',
+            dark: 'github-dark',
+          },
+          wrap: true,
+        },
+      },
 });
