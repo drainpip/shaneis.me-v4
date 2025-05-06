@@ -167,6 +167,7 @@ header {
 }
 pre {
   border: 1px solid var(--highlight-background-color);
+  margin-bottom: 2em;
   padding: 1em 1.5em;
 }
 @media (min-width: 60em) {
