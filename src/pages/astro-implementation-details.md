@@ -1,7 +1,7 @@
 ---
 layout: ../layouts/PostLayout.astro
 title: 'Transition to Astro'
-description: "Some things I collected to make my website work like I wanted while playing within Astro's playground."
+description: "Some things I collected to make my website work like I wanted while transitioning away from Gatsby and playing within Astro's playground."
 date: '2025-05-06'
 tags: ['meta']
 ---
@@ -98,6 +98,8 @@ const tags = [...new Set(allPosts.map((post: any) => post.data.tags).flat())];
 Another requirement I had that wasn't covered in the tutorial was having previous / next post links. I think this is a pretty common feature in blogs, so I figured we could get it going in Astro too.
 
 ```js
+/* src/layouts/PostLayout.astro */
+
 // 1. Get all the posts, and sort them like normal by date
 const allPosts = (await getCollection("blog")).sort(
   (a: any, b: any) => Date.parse(b.data.date) - Date.parse(a.data.date)
@@ -114,7 +116,6 @@ const previousPost =
 // 4. Is there a post from the current index -1? If so what is it?
 const nextPost =
   currentPostIndex === 0 ? undefined : allPosts[currentPostIndex - 1];
-
 ... 
 
   {
@@ -151,6 +152,7 @@ In Astro, you can add CSS styling to a specific component. This will scope it to
 
 ```css
 /* src/layouts/PostLayout.astro */
+
 @media (min-width: 40em) {
   h2,
   h3 {
@@ -169,6 +171,7 @@ The `PostLayout.astro` file had a `<slot />` [component](https://docs.astro.buil
 
 ```css
 /* src/styles/global.css */
+
 @media (min-width: 40em) {
   article h2,
   article h3 {
@@ -183,9 +186,11 @@ The `PostLayout.astro` file had a `<slot />` [component](https://docs.astro.buil
 }
 ```
 
-Also, and this is completely separate from Astro, but I always had a smattering of random hex colors throughout my CSS. I took the opportunity to add CSS variables. Naming these is hard, but describing what it's doing, rather than some sort of color or shade index, always helps me remember what color is wh at. By setting up the dark mode this way, I could remove dozens of lines of code from my CSS and just rely on this switch to do all the work.
+Also, and this is completely separate from Astro, but I always had a smattering of random hex colors throughout my CSS. I took the opportunity to add CSS variables. Naming these is hard, but describing what it's doing, rather than some sort of color or shade index always helps me remember what color is what. By setting up the dark mode this way, I could remove dozens of lines of code from my CSS and just rely on this switch to do all the work.
 
 ```css
+/* src/styles/global.css */
+
 :root {
   --body-background-color: #fff;
   --box-shadow-color: #222;
