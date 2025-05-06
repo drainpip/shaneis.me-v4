@@ -18,7 +18,14 @@ const tagsCount = allPosts.reduce((allTags: any, post: any) => {
   }
   return allTags;
 }, {});
-const tags = [...new Set(allPosts.map((post: any) => post.data.tags).flat())];
+const tags = [
+  ...new Set(
+    allPosts
+      .map((post: any) => post.data.tags)
+      .flat()
+      .sort()
+  ),
+];
 const latestPosts = allPosts.slice(0, 3);
 const pageTitle = "Home - Shane is me";
 const { pageDescription } = Astro.props;
