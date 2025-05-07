@@ -167,7 +167,7 @@ In Astro, you can add CSS styling to a specific component. This will scope it to
 }
 ```
 
-The `PostLayout.astro` file had a `<slot />` [component](https://docs.astro.build/en/basics/astro-components/#slots) which Astro uses to put your content into a layout. I had initially assumed that the `h2, h3` elements would inherit these styles due to the Cascade. This wasn't the case, as they're scoped to the elements themselves within the `PostLayout.astro`. So I had to move this CSS into the `global.css` file. There is a way to [force something into global](https://docs.astro.build/en/guides/styling/#global-styles), but I felt the following was easier to understand:
+The `PostLayout.astro` file had a `<slot />` [component](https://docs.astro.build/en/basics/astro-components/#slots) which Astro uses to put your content into a layout. I had initially assumed that the `h2, h3` elements, which live inside that `<slot />` component, would inherit these styles due to the Cascade. This wasn't the case, as they're scoped to the elements themselves within the `PostLayout.astro` and not going into the layout's children. So I had to move this CSS into the `global.css` file. There is a way to [force something into global](https://docs.astro.build/en/guides/styling/#global-styles), but I felt the following was easier to understand:
 
 ```css
 /* src/styles/global.css */
@@ -217,4 +217,4 @@ Also, and this is completely separate from Astro, but I always had a smattering 
 }
 ```
 
-All in all, I had a great time getting my website moved over to Astro. It had been something I had put off for some time because of laziness, and it was working fine before I suppose. The [codebase](https://github.com/drainpip/shaneis.me-v4) is so much more clean, and easier to understand, which is helpful when I'll make some updates a year or more from now.
+All in all, I had a great time getting my website moved over to Astro. It had been something I had put off for some time because of laziness. The [codebase](https://github.com/drainpip/shaneis.me-v4) is so much more clean, and easier to understand, which will be helpful when I'll make some updates a year or more from now.
