@@ -27,7 +27,7 @@ From an employer's perspective:
 
 From an employee's perspective:
 
-* You can live anywhere, not just in the expensive metro where the most offices are, this can make a higher salary go much further as a bonus.
+* You can live anywhere, not just in the expensive metro where the most offices are, this can make a higher salary go much further as a bonus. Or you can work from anywhere, taking extended vacations and working while living the life of a tourist.
 * You'll have more free time in your day not having to commute, and more flexibility to take care of things during the week that are mostly impossible to do without taking time off.
 * Taking care of children's school schedule, or being a caretaker to a loved one, is something you can build your day around instead of the opposite.
 * It's easy to start and stop work when you want, it's not necessary to clock 8+ hours just because everyone else is still at their desks in the office.
@@ -48,11 +48,7 @@ From an employee's perspective:
 * Some people don't know they dislike it until they try it.
 * Getting to know your coworkers takes more effort.
 
-In most situations where having a remote workforce is possible, both employers and employees agree that the pros outweigh the cons. In cases where employers think the opposite, you'll have things like forced hybrid or full return to office mandates. I'm not going to say that all of those situations will lead to worse productivity and morale, but it sure does make my job hiring full remote easier.
-
-When you do remote-first well, you'll be rewarded with a much happier and effective group of people working for you. They have the time to live the lives of modern adults, where flexibility is paramount for everyone. This flexibility along with the free time of not having to worry about a commute every day make it ideal especially for families, but even that single twenty-something is going to get something out of being able to step away from their desk to go to a dentist appointment without hesitation. Trust is a two way street, and in my opinion is your most important asset as a leader: both in cultivating it for yourself and giving it to your team. All talk of keeping track of what people do every minute of the day goes right out the window with this trust. You're giving your team trust, time, flexibility and in return they'll give you more, and gladly, than they could give to a job forcing them into an office every day.
-
-You can do a million things to do remote poorly and get results that make you think everyone needs to get back into the office because they can't be trusted, or because no one is working well together. I promise you, the problem is with the culture you helped create. Over here I'm seeing people thrive in a fully remote world.
+In most situations where having a remote workforce is possible, both employers and employees agree that the pros outweigh the cons. In cases where employers think the opposite, you'll have things like forced hybrid or full return to office mandates. I'm not going to say that all of those situations will lead to worse productivity and morale, but it sure does make my job hiring fully remote easier.
 
 ### How to do remote well
 
@@ -60,7 +56,10 @@ I think it's my job, and the job of the company's leadership, to make the hard p
 
 You could also do all the remote side well enough, but forget that teams of humans need to get together from time to time and do things together that are extremely difficult to do remote. For example: long term planning, deep architectural explorations, or really any time there are lots of voices and opinions that all need to be heard at once. Also, celebrations of any type are extremely hollow in a remote setting. Sometimes getting together because you haven't in a long time is a good enough reason.
 
-* Remote first done well
-* Good trouble
-* Manufacture the bonding
-* Feedback over zoom
+`Manufacture the bonding - set aside time for face to face time, make space for and encourage non-work communication, mess around during meetings.`
+
+`Understand remote isn't good in some situations - many voices and opinions; Bring people together from time to time - having a small office where it's needed will help those that prefer some in-office work, getting together for the bonding, getting together for planning or to dislodge disagreements;`
+
+When you do remote-first well, you'll be rewarded with a much happier and effective group of people working for you. They have the time to live the lives of modern adults, where flexibility is paramount for everyone. This flexibility along with the free time of not having to worry about a commute every day make it ideal especially for families, but even that single twenty-something is going to get something out of being able to step away from their desk to go to a dentist appointment without hesitation. Trust is a two way street, and in my opinion is your most important asset as a leader: both in cultivating it for yourself and giving it to your team. All talk of keeping track of what people do every minute of the day goes right out the window with this trust. You're giving your team trust, time, flexibility and in return they'll give you more, and gladly, than they could give to a job forcing them into an office every day.
+
+You can do a million things to do remote poorly and get results that make you think everyone needs to get back into the office because they can't be trusted, or because no one is working well together. I promise you, the problem is with the culture you helped create. Over here I'm seeing people thrive in a fully remote world.
