@@ -9,8 +9,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/rss": "^4.0.12",
-    "astro": "^5.13.7",
+    "@astrojs/rss": "^4.0.13",
+    "astro": "^5.15.2",
     "astro-ai-robots-txt": "^0.1.2"
   }
 }
