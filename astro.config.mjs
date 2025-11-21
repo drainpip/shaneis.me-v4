@@ -2,6 +2,8 @@
 import { defineConfig } from 'astro/config';
 import aiRobotsTxt from 'astro-ai-robots-txt';
 
+import mdx from '@astrojs/mdx';
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://shaneis.me",
@@ -14,5 +16,5 @@ export default defineConfig({
         wrap: true,
       },
     },
-  integrations: [aiRobotsTxt()],
+  integrations: [aiRobotsTxt(), mdx()],
 });
