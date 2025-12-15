@@ -212,3 +212,8 @@ li > code {
     text-decoration: var(--shiki-dark-text-decoration) !important;
   }
 }
+
+/* Only way I could get the spacing I needed */
+.bluesky-post-container {
+  margin-block-end: 2em !important;
+}
